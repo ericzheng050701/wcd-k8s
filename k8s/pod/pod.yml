@@ -1,0 +1,13 @@
+# Simple Kubernetes Pod to deploy the app contained in edwinguo123/wcd_js_class_demo
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hello-pod
+  labels:
+    app: web
+spec:
+  containers:
+    - name: web-pod
+      image: edwinguo123/wcd_js_class_demo:bootcamp1
+      ports:
+        - containerPort: 8080
