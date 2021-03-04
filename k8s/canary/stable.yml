@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stable-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web
+      track: stable
+  template:
+    metadata:
+      labels:
+        app: web 
+        track: stable
+    spec:
+      containers:
+      - name: hello-pod
+        image: edwinguo123/wcd_js_class_demo:bootcamp1  
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+
