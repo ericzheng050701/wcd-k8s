@@ -1,0 +1,17 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: web-service
+  labels:
+    app: web-svc 
+    role: green 
+    env: prod
+spec:
+  type: LoadBalancer
+  selector:
+    app: web
+    role: green
+  ports:
+    - port: 80
+      targetPort: 8080
+

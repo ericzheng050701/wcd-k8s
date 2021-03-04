@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: green-deployment 
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: web 
+      role: green 
+  template:
+    metadata:
+      labels:
+        app: web  
+        role: green 
+    spec:
+      containers:
+      - name: hello-web 
+        image: edwinguo123/wcd_js_class_demo:v2
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+

@@ -1,0 +1,17 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: web-blue-test-svc
+  labels:
+    app: web 
+    role: blue
+    env: test
+spec:
+  type: LoadBalancer
+  selector:
+    app: web 
+    role: blue
+  ports:
+    - port: 9000
+      targetPort: 8080
+

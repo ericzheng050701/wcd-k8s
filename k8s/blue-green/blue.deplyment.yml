@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blue-deployment 
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: web 
+      role: blue 
+  template:
+    metadata:
+      labels:
+        app: web  
+        role: blue 
+    spec:
+      containers:
+      - name: hello-web 
+        image: edwinguo123/wcd_js_class_demo:bootcamp1
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+

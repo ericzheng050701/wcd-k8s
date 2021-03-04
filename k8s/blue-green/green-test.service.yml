@@ -1,0 +1,17 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: web-green-test
+  labels:
+    app: web 
+    role: green
+    env: test
+spec:
+  type: LoadBalancer
+  selector:
+    app: web 
+    role: green
+  ports:
+    - port: 9001
+      targetPort: 8080
+
